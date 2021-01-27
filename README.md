@@ -9,7 +9,7 @@ Multi architecture container image for [Munin](http://munin-monitoring.org/) ser
 Inspired from build-failures [docker-munin-server](https://github.com/build-failure/docker-munin-server).
 Forked from [aheimsbakk/munin](https://github.com/aheimsbakk/munin)
 
-![Docker Pulls](https://img.shields.io/docker/pulls/kdcio/munin-server) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/kdcio/munin-server/Docker%20Build) ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/kdcio/munin-server/latest)
+[![Docker Pulls](https://img.shields.io/docker/pulls/kdcio/munin-server)](https://hub.docker.com/r/kdcio/munin-server) [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/kdcio/munin-server/Docker%20Build)](https://github.com/kdcio/munin-server/actions?query=workflow%3A%22Docker+Build%22) [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/kdcio/munin-server/latest)](https://hub.docker.com/r/kdcio/munin-server)
 
 
 ## Tags
