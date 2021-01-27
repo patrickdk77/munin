@@ -1,6 +1,6 @@
 # munin-server
 
-Multi architecture container image for Munin server using official Alpine image.
+Multi architecture container image for [Munin](http://munin-monitoring.org/) server using official Alpine image.
 
 * `rrdcached` is used to be able to handle a large number of hosts
 
@@ -13,7 +13,7 @@ Forked from [aheimsbakk/munin](https://github.com/aheimsbakk/munin)
 
 ## Tags
 
-* latest ([Dockerfile](https://github.com/kdcio/munin=server/blob/master/Dockerfile))
+* latest ([Dockerfile](https://github.com/kdcio/munin-server/blob/master/Dockerfile))
 
 ## Environment variables
 
@@ -68,6 +68,25 @@ docker run -d \
   -p 80:80 \
   --name munin-server \
   kdcio/munin-server
+```
+
+Using docker-compose.yml
+
+```
+version: '2.4'
+
+services:
+  munin:
+    image: kdcio/munin-server
+    volumes:
+      - /etc/munin/munin/munin-conf.d:/etc/munin/munin-conf.d 
+      - /etc/munin/munin/plugin-conf.d:/etc/munin/plugin-conf.d
+      - /var/lib/munin:/var/lib/munin 
+      - /var/log/munin:/var/log/munin
+    environment: 
+      NODES: routers;10.0.0.1:mycommunity routers;10.1.0.1:mycommunity
+    ports:
+      - 80:80
 ```
 
 Access container at `http://host/munin/`
