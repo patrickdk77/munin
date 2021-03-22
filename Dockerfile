@@ -1,10 +1,7 @@
-FROM registry.heimsbakk.no:5487/docker/alpine:latest
-
-# Thats me
-MAINTAINER Arnulf Heimsbakk <arnulf.heimsbakk@gmail.com>
+FROM alpine:3.12
 
 # Install packages
-RUN apk add --no-cache \
+RUN apk --update --no-cache add \
   coreutils \
   dumb-init \
   findutils \
