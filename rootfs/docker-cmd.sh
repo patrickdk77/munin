@@ -12,6 +12,11 @@ cp "/usr/share/zoneinfo/$TZ" /etc/localtime
 echo "$TZ" >  /etc/timezone
 
 
+for e in ${!SSMTP_*} ; do echo "${e:6}=${!e}" >> /etc/ssmtp/ssmtp.conf ; done
+if [ ! -z "${MUNIN_CONTACT}" ]; then
+  sed -i -r -e "s|^#?contact.someuser.command.*|contact.docker.command mail -s \"Munin notification\" ${MUNIN_CONTACT}|" /etc/munin/munin.conf
+fi
+
 # Fix ownership
 chown munin.munin \
   /var/log/munin /run/munin /var/lib/munin /var/lib/munin/cgi-tmp \
